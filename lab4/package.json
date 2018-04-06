@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "babel": "babel -o compiled.js",
+        "babel-h": "babel -h"
+    }
+}
