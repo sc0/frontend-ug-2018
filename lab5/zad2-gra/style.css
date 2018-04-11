@@ -1,0 +1,27 @@
+#game-canvas {
+    position: relative;
+    border: 1px solid black;
+    background: lightgoldenrodyellow;
+    width: 600px;
+    height: 600px;
+}
+
+#opponent {
+    position: absolute;
+    border: 1px solid red;
+    background: red;
+    width: 50px;
+    height: 50px;
+    top: 300px;
+    left: 200px;
+}
+
+#player {
+    position: absolute;
+    border: 1px solid blue;
+    background:  blue;
+    width: 50px;
+    height: 50px;
+    top: 100px;
+    left: 100px;
+}
