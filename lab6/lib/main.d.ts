@@ -1,5 +1,6 @@
 interface Person {
     name: string;
+    yob: number;
 }
 declare class Student {
     name: string;
@@ -8,7 +9,9 @@ declare class Student {
 }
 declare function sayHi(person: Person): void;
 declare const zenek: Student;
-declare let ziutek: {
+declare const ziutek: {
     name: string;
     yob: number;
 };
+declare const mylist: Person[];
+declare const mytouple: [Person, number];

@@ -18,4 +18,6 @@ var ziutek = {
   name: 'Ziutek',
   yob: 1967
 };
+var mylist = [zenek, ziutek];
+var mytouple = [zenek, 2012];
 sayHi(zenek);
