@@ -1,0 +1,9 @@
+<app-watches-search (searchQuery)="updateList($event)"></app-watches-search>
+
+<ul>
+  <li *ngFor="let watch of listToShow" (click)="select(watch)" [class.selected]="watch === selectedWatch">
+    <strong>{{watch.brand}}</strong> {{watch.model}}
+  </li>
+</ul>
+
+<app-watches-details *ngIf="selectedWatch" [watch]="selectedWatch"></app-watches-details>
