@@ -1,0 +1,12 @@
+<button *ngIf="!addWatch" (click)="addWatch=true">Dodaj</button>
+
+<app-add-watch *ngIf="addWatch" (formSubmitted)="watchAdded()"></app-add-watch><br/><br/>
+
+<app-watches-search (searchQuery)="updateList($event)"></app-watches-search><br/><br/>
+<ul>
+  <li *ngFor="let watch of listToShow" (click)="select(watch)" [class.selected]="watch === selectedWatch">
+    <strong>{{watch.brand}}</strong> {{watch.model}}
+  </li>
+</ul>
+
+<app-watches-details *ngIf="selectedWatch" [watch]="selectedWatch"></app-watches-details>
