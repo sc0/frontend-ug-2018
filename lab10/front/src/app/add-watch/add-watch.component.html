@@ -1,0 +1,81 @@
+<div class="add-watch-form">
+    <form [formGroup]="newWatchForm" (ngSubmit)="onSubmit(newWatchForm.value)" novalidate>
+
+      <div class="form-group form-inline form-row">
+        <label class="col-2">Marka</label>
+        <input class="col-10" [ngClass]="{'form-control': true,
+                           'is-valid': newWatchForm.get('brand').touched && newWatchForm.get('brand').valid,
+                           'is-invalid':newWatchForm.get('brand').touched && newWatchForm.get('brand').invalid}" type="text" formControlName="brand">
+        <div class="invalid-feedback">
+          Pole nie może być puste!
+        </div>
+      </div>
+
+      <div class="form-group form-inline form-row">
+        <label class="col-2">Model</label>
+        <input class="col-10" [ngClass]="{'form-control': true,
+                           'is-valid': newWatchForm.get('model').touched && newWatchForm.get('model').valid,
+                           'is-invalid': newWatchForm.get('model').touched && newWatchForm.get('model').invalid}" type="text" formControlName="model">
+        <div class="invalid-feedback">
+          Pole nie może być puste!
+        </div>
+      </div>
+
+      <div class="form-group form-inline form-row">
+        <label class="col-2">Rodzaj paska</label>
+        <input class="col-10" [ngClass]="{'form-control': true,
+                           'is-valid': newWatchForm.get('strap').touched && newWatchForm.get('strap').valid,
+                           'is-invalid': newWatchForm.get('strap').touched && newWatchForm.get('strap').invalid}" type="text" formControlName="strap">
+        <div class="invalid-feedback">
+          Pole nie może być puste!
+        </div>
+      </div>
+
+      <div class="form-group form-check">
+        <input class="form-check-input" type="checkbox" formControlName="forMen">
+        <label class="form-check-label">Dla mężczyzn?</label>
+      </div>
+
+      <div class="form-group form-inline form-row">
+        <label class="col-2">Odporność na zanurzenia</label>
+        <div class="input-group col-10">
+          <input [ngClass]="{'form-control': true,
+                           'is-valid': newWatchForm.get('waterResistence').touched && newWatchForm.get('waterResistence').valid,
+                           'is-invalid': newWatchForm.get('waterResistence').touched && newWatchForm.get('waterResistence').invalid}" type="text" formControlName="waterResistence">
+          <div class="input-group-append">
+            <div class="input-group-text">m</div>
+          </div>
+        </div>
+        <div class="invalid-feedback">
+          Wartość musi być liczbą większą od zera!
+        </div>
+      </div>
+
+      <div class="form-group form-inline form-row">
+        <label class="col-2">Cena</label>
+        <div class="input-group col-10">
+          <div class="input-group-prepend">
+            <div class="input-group-text">$</div>
+          </div>
+          <input [ngClass]="{'form-control': true,
+                           'is-valid': newWatchForm.get('price').touched && newWatchForm.get('price').valid,
+                           'is-invalid': newWatchForm.get('price').touched && newWatchForm.get('price').invalid}" type="text" formControlName="price">
+          <div class="invalid-feedback">
+            Wartość musi być liczbą większą od zera!
+          </div>
+        </div>
+      </div>
+      <br/>
+
+      <div class="button-row">
+          <button routerLink="/watches" type="button" class="btn btn-primary btn-round"><div class="fa fa-arrow-left"></div></button>
+          <button [ngClass]="{'btn': true, 'btn-success': newWatchForm.valid, 'btn-outline-secondary': !newWatchForm.valid }"
+            type="submit" class="btn btn-success" [disabled]="!newWatchForm.valid">Wyślij</button>
+      </div>
+      <div style="text-align: right;">
+        <small class="submit-blocked-text" *ngIf="!newWatchForm.valid">
+          Upewnij się, że wszystkie pola są uzupełnione i poprawne
+        </small>
+      </div>
+    </form>
+</div>

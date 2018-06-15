@@ -1,0 +1,22 @@
+<ng-container *ngIf="watch">
+  <table>
+    <tr>
+      <th scope="row">Marka</th><td>{{watch.brand}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Model</th><td>{{watch.model}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Dla</th><td>{{watch.forMen ? "mężczyzn" : "kobiet"}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Rodzaj paska</th><td>{{watch.strap}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Wodoodporność</th><td>{{watch.waterResistence}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Cena</th><td>${{watch.price}}</td>
+    </tr>
+  </table>
+</ng-container>

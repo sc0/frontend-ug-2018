@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+router-outlet {
+  position: relative;
+}
+
+app-watches, app-add-watch {
+  width: 700px;
+  height: 500px;
+  padding: 20px;
+
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin: 0 0 0 -370px;
+}
+

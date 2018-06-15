@@ -1,0 +1,17 @@
+
+<app-watches-search (searchQuery)="updateList($event)"></app-watches-search><br/>
+<div class="row">
+  <div class="col-5">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a *ngFor="let watch of listToShow" routerLink="/watch/{{watch.id}}" id="list-{{watch.id}}-list"
+         data-toggle="list" class="list-group-item list-group-item-action" [class.active]="watch.id === selectedWatch">
+        <strong>{{watch.brand}}</strong> {{watch.model}}
+      </a>
+    </div>
+  </div>
+  <div class="col-7 watch-data">
+    <app-watches-details *ngIf="selectedWatch > -1" [watch]="watchData"></app-watches-details>
+  </div>
+</div>
+<br/>
+<button class="btn btn-primary btn-round" *ngIf="!addWatch" routerLink="/add/watch"><div class="fa fa-plus"></div></button>

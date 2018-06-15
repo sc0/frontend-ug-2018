@@ -1,0 +1,12 @@
+.submit-blocked-text {
+  color: #dd3545;
+}
+
+.btn-round {
+  border-radius: 50%;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+}
